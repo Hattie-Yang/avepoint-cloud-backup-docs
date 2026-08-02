@@ -1,0 +1,26 @@
+﻿英文术语,缩写,中文术语,专业定义,使用场景 & 写作注意事项
+Tenant,—,租户,Microsoft 365 中一个独立的组织实例，拥有专属域名、用户和数据；AvePoint Backup 以租户为单位进行授权和管理,"所有文档高频出现；首次出现写全称 ""Microsoft 365 tenant""，后续可直接用 tenant；中文统一译 ""租户""，不译 ""承租户"""
+Backup Policy,—,备份策略,定义备份范围、执行频率和数据保留规则的配置集合，是 Cloud Backup 的核心管理单元,管理员手册、快速入门均高频使用；注意区分 policy（策略配置）和 job（具体执行任务），不可混用
+Backup Job,—,备份任务,备份策略触发后生成的单次执行实例，包含开始时间、状态、结果等运行信息,"任务监控、故障排查文档高频使用；写作时 ""run a backup job""（执行任务），不要写 ""run a policy"""
+Restore,—,还原,将已备份的数据恢复到原始位置或备用位置的操作,还原模块文档统一用 restore；注意：recovery 偏业务层概念（灾难恢复），技术操作文档一律用 restore
+Workload,—,工作负载,Cloud Backup 支持保护的 M365 服务类型，包括 SharePoint、Teams、OneDrive、Exchange 等,"产品概述、备份范围配置文档；中文统一译 ""工作负载""，不译 ""工作负荷"""
+SharePoint Online,SPO,SharePoint Online,Microsoft 365 中的在线协作平台，用于站点、文档库和列表管理,"描述备份范围时首次出现写全称 + 缩写 ""SharePoint Online (SPO)""，后续可用 SPO"
+OneDrive for Business,ODB,商业版 OneDrive,Microsoft 365 中面向企业用户的个人云存储服务,"首次出现写全称 ""OneDrive for Business""，后续可缩写 ODB；注意区分消费者版 OneDrive 和商业版"
+Exchange Online,EXO,Exchange Online,Microsoft 365 中的企业邮件和日历服务,"首次出现全称 + 缩写 ""Exchange Online (EXO)""；中文统一译 ""Exchange Online""，不译 ""在线交换"""
+Microsoft Teams,—,Microsoft Teams,Microsoft 365 中的团队协作平台，整合聊天、会议、文件和应用,"全文写全称，不缩写为 ""Teams"" 作为独立术语（首次出现可写 ""Microsoft Teams""，后续可用 Teams 指代）"
+Retention Period,—,保留周期,备份数据在系统中保存的时长，超期后自动清理,备份策略配置文档核心术语；注意：retention（保留）≠ preservation（保存），备份场景统一用 retention
+Snapshot,—,快照,某一时间点的数据完整备份副本，是还原操作的基础,"技术原理、还原文档使用；中文统一译 ""快照""，不译 ""快照"""
+OAuth,—,OAuth（开放授权）,第三方应用获取 Microsoft 365 资源访问权限的安全授权框架，无需暴露用户密码,"租户授权、安全相关文档；写全称 ""OAuth 2.0 authentication"" 更严谨；中文保留英文缩写，不硬译"
+Global Administrator,—,全局管理员,Microsoft 365 中拥有最高权限的管理员角色，可管理租户内所有设置,权限说明、前置条件文档；注意区分 Global Admin（微软侧角色）和 AvePoint 平台管理员
+Application Administrator,—,应用管理员,Microsoft 365 中负责管理应用注册和权限的管理员角色,授权前置条件文档；写作时说明该角色可替代全局管理员完成租户授权，降低权限风险
+RPO (Recovery Point Objective),RPO,恢复点目标,可容忍的最大数据丢失量，即两次备份之间的时间间隔,产品白皮书、方案设计文档使用；Quick Start 等入门文档不出现，避免增加理解门槛
+RTO (Recovery Time Objective),RTO,恢复时间目标,从故障发生到服务恢复可容忍的最长时间,同上，偏方案级概念，入门文档不使用
+BYOS (Bring Your Own Storage),BYOS,自带存储,允许客户使用自己的 Azure 存储账户存放备份数据，而非 AvePoint 提供的存储,存储配置、高级功能文档；入门文档不出现，属于进阶配置
+Command Center,—,命令中心 / 统一管理中心,AvePoint 提供的多产品统一管理控制台，可集中管理备份、迁移等多个服务,产品概述、平台介绍文档；注意：Cloud Backup 自身控制台 ≠ Command Center，二者是不同层级概念
+Granular Restore,—,细粒度还原,支持还原单个文件、单封邮件、单个列表项等最小粒度数据，而非整站恢复,"还原功能文档核心卖点；写作时强调 ""item-level restore"" 作为同义词可互换"
+Original Location Restore,—,原位置还原,将数据恢复到其原始所在的站点、库或邮箱位置,还原配置文档；对应 alternate location restore（备用位置还原），二者成对出现
+Alternate Location Restore,—,备用位置还原,将数据恢复到不同于原始位置的目标站点、库或邮箱,同上；常用于跨租户迁移或测试场景
+Task Monitor,—,任务监控,Cloud Backup 控制台中查看所有备份和还原任务运行状态的模块,"操作手册、故障排查文档；中文统一译 ""任务监控""，不译 ""任务监视器"""
+Incremental Backup,—,增量备份,仅备份自上次备份以来发生变化的数据，以减少存储空间和传输时间,技术原理、存储优化文档；注意：Cloud Backup 默认采用增量机制，入门文档可简化不提
+Consent,—,授权同意 / 许可,在 OAuth 流程中，管理员对 AvePoint 应用请求的权限进行确认的动作,"租户授权文档高频使用；""grant consent""（授予许可）是固定搭配，不用 ""agree"" 或 ""approve"""
+Release Notes,RN,版本更新说明,每次产品版本发布时同步更新的文档，说明新增功能、优化和已知问题,"文档体系分类术语；写作时首字母大写 ""Release Notes"" 作为文档类型名称"
